@@ -1,0 +1,56 @@
+/*.nav-btn{
+  color: white !important;
+  font-weight: 800;
+}
+.fixed-header .nav-btn{
+  color: black !important;
+}*/
+
+.visible-xs-block{
+  width: 40px;
+}
+
+.achieve-item .name{
+  font-size: 20px !important;
+}
+
+.achieve-item:after{
+  top: 140px !important;
+}
+
+.table-title{
+  font-weight: bold;
+}
+
+.news,.notice{
+  position: relative;
+  padding: 4% 3% 3% 3%;
+}
+
+.news a,.notice a{
+  color: black;
+  text-decoration: none;
+}
+
+
+.news:before{
+  position: relative;
+  content: "新闻动态";
+  font-size：20px;
+  color: #333;
+  font-weight: blod;
+  text-align: center;
+  letter-spacing: 1px;
+  bottom: 5px;
+}
+
+.notice:before{
+  position: relative;
+  content: "通知";
+  font-size：20px;
+  color: #333;
+  font-weight: blod;
+  text-align: center;
+  letter-spacing: 1px;
+  bottom: 5px;
+}
