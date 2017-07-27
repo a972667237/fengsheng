@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'api',
     'index',
+    'DjangoUeditor',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -121,6 +122,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+UEDITOR_SETTINGS = {
+    "images_upload":{
+        'allow_type': 'jpg, png, gif, JPG, PNG, GIF',
+        'path': 'img_upload_file/',
+        'max_size': '3000kb',
+    },
+    "imageUrlPrefix": "/baskproject/"
+}
