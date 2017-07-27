@@ -36,9 +36,7 @@
 .news:before{
   position: relative;
   content: "新闻动态";
-  font-size：20px;
   color: #333;
-  font-weight: blod;
   text-align: center;
   letter-spacing: 1px;
   bottom: 5px;
@@ -47,10 +45,9 @@
 .notice:before{
   position: relative;
   content: "通知";
-  font-size：20px;
   color: #333;
-  font-weight: blod;
   text-align: center;
   letter-spacing: 1px;
   bottom: 5px;
 }
+
