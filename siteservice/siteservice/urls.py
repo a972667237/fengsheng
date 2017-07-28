@@ -14,8 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url, include
+from django.http import HttpResponseRedirect
 from django.contrib import admin
 from index.views import index_render, article_render, list_render
+import api.urls as api_urls
 
 
 urlpatterns = [
@@ -23,7 +25,11 @@ urlpatterns = [
     url(r'^$', index_render),
     url(r'^article', article_render),
     url(r'^ueditor/', include('DjangoUeditor.urls')),
-    url(r'^list', list_render)
+    url(r'^list', list_render),
+    url(r'^api/', include(api_urls)),
+    url(r'^about', lambda x: HttpResponseRedirect('/article?article_id=1')),
+    url(r'^guide', lambda x: HttpResponseRedirect('/article?article_id=2')),
+    url(r'^rule', lambda x: HttpResponseRedirect('/article?article_id=3')),
 ]
 
 from django.conf.urls.static import static

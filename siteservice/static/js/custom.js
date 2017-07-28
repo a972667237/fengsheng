@@ -241,9 +241,9 @@
             });
         },
         startVideo: function () {
-            if (!Modernizr.touch) {
-                $(".video-play").mb_YTPlayer();
-            }
+            // if (!Modernizr.touch) {
+            //     $(".video-play").mb_YTPlayer();
+            // }
         },
         toggleSearch: function () {
             $(document).on('click', "#search-open, #search-close", function () {
