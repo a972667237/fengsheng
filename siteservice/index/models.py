@@ -10,7 +10,7 @@ ARTICLE_TYPE = (
 
 class Articles(models.Model):
     title = models.CharField(u'标题', max_length=200)
-    content = UEditorField(u'内容', max_length=2000)
+    content = UEditorField(u'内容', max_length=100000)
     time = models.DateField(u'发布时间', auto_now_add=True)
     isPublish = models.BooleanField(u'是否发布', default=False)
     article_type = models.CharField(u'文章类型', choices=ARTICLE_TYPE, default="1", max_length=1)
