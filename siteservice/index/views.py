@@ -15,7 +15,7 @@ def article_render(requests):
 
 def list_render(requests):
     list_type = requests.GET.get('list_type', '1')  # 1 or 2 , 1 is notices and the 2 is .........news
-    articles = Articles.objects.filter(article_type=list_type, isPublish=True)
+    articles = Articles.objects.filter(article_type=list_type, isPublish=True).order_by("-time")
     if not articles:
         raise Http404
     paginator = Paginator(articles, 10)
