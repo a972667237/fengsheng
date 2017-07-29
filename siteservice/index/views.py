@@ -4,8 +4,8 @@ from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
 # Create your views here.
 
 def index_render(requests):
-    articles_notice = Articles.objects.filter(article_type='1', isPublish=True).order_by("-time")[:5]
-    articles_new = Articles.objects.filter(article_type='2', isPublish=True).order_by("-time")[:5]
+    articles_notice = Articles.objects.filter(article_type='1', isPublish=True).order_by("time")[:5]
+    articles_new = Articles.objects.filter(article_type='2', isPublish=True).order_by("time")[:5]
     return render(requests, 'index.html', locals())
 
 def article_render(requests):
@@ -15,7 +15,7 @@ def article_render(requests):
 
 def list_render(requests):
     list_type = requests.GET.get('list_type', '1')  # 1 or 2 , 1 is notices and the 2 is .........news
-    articles = Articles.objects.filter(article_type=list_type, isPublish=True).order_by("-time")
+    articles = Articles.objects.filter(article_type=list_type, isPublish=True).order_by("time")
     if not articles:
         raise Http404
     paginator = Paginator(articles, 10)
