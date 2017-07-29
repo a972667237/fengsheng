@@ -24,7 +24,6 @@
 
 .news,.notice{
   position: relative;
-  padding: 4% 3% 3% 3%;
 }
 
 .news a,.notice a{
@@ -33,23 +32,6 @@
 }
 
 
-.news:before{
-  position: relative;
-  content: "新闻动态";
-  color: #333;
-  text-align: center;
-  letter-spacing: 1px;
-  bottom: 5px;
-}
-
-.notice:before{
-  position: relative;
-  content: "通知";
-  color: #333;
-  text-align: center;
-  letter-spacing: 1px;
-  bottom: 5px;
-}
 
 .qqFix{
   position: fixed ;
