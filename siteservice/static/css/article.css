@@ -1,0 +1,8 @@
+.container{
+    width: 80%;
+    overflow: hidden;
+}
+
+img{
+    max-width: 100% !important;
+}
