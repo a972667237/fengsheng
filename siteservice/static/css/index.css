@@ -56,7 +56,11 @@
 
 .product_about p{
   color: #000;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 28px;
   font-weight: 400;
+}
+
+.product_h4{
+  font-size: 30px !important;
 }
