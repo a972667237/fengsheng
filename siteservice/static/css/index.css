@@ -7,7 +7,7 @@
 }*/
 
 .visible-xs-block{
-  width: 40px;
+  width: 55px;
 }
 
 .achieve-item .name{
@@ -54,3 +54,9 @@
   font-family: "Microsoft YaHei UI";
 }
 
+.product_about p{
+  color: #000;
+  font-size: 14px;
+  line-height: 28px;
+  font-weight: 400;
+}
