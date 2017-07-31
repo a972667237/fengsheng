@@ -64,3 +64,12 @@
 .product_h4{
   font-size: 30px !important;
 }
+
+@media only screen and (max-width: 390px) {
+  .product_h4{
+    font-size: 28px !important;
+  }
+  .product_about p{
+    font-size: 11px;
+  }
+}
