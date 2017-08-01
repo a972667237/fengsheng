@@ -21,10 +21,6 @@ function FengshengWebSocket() {
         };
 }
 
-
-var realTimeInformation = {};
-FengshengWebSocket();
-
 function updatePrice() {
     $list_content = $(".price tr");
     $list_content[1].children[1].innerHTML = dealPrice(realTimeInformation["AUD"]);
@@ -46,4 +42,20 @@ function dealPrice(p) {
     return p;
 }
 
-setTimeout(updatePrice, 3000);
+if( typeof(WebSocket) != "function" ) {
+    $.get("/api/getInfo", function(data, status){
+        var information = data["all_info"];
+        $list_content[1].children[1].innerHTML = dealPrice(information["AUD"]);
+        $list_content[2].children[1].innerHTML = dealPrice(information["EUR"]);
+        $list_content[3].children[1].innerHTML = dealPrice(information["GBP"]);
+        $list_content[4].children[1].innerHTML = dealPrice(information["Gold"]);
+        $list_content[5].children[1].innerHTML = dealPrice(information["LLS"]);
+        $list_content[6].children[1].innerHTML = dealPrice(information["Oil"]);
+        $list_content[7].children[1].innerHTML = dealPrice(information["USD"]);
+    });
+} else {
+    var realTimeInformation = {};
+    FengshengWebSocket();
+    setTimeout(updatePrice, 3000);
+}
+
