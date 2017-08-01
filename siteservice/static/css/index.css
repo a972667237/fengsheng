@@ -73,3 +73,11 @@
     font-size: 11px;
   }
 }
+
+.price table tr:nth-child(odd) td:nth-child(2){
+  color: red;
+}
+
+.price table tr:nth-child(even) td:nth-child(2){
+  color: green;
+}
