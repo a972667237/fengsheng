@@ -42,7 +42,7 @@ function dealPrice(p) {
     return p;
 }
 
-if( typeof(WebSocket) != "function" ) {
+function updatePriceN() {
     $.get("/api/getInfo", function(data, status){
         var information = data["all_info"];
         $list_content[1].children[1].innerHTML = dealPrice(information["AUD"]);
@@ -52,7 +52,12 @@ if( typeof(WebSocket) != "function" ) {
         $list_content[5].children[1].innerHTML = dealPrice(information["LLS"]);
         $list_content[6].children[1].innerHTML = dealPrice(information["Oil"]);
         $list_content[7].children[1].innerHTML = dealPrice(information["USD"]);
+        setTimeout(updatePriceN, 30000);
     });
+}
+
+if( typeof(WebSocket) != "function" ) {
+    setTimeout(updatePriceN, 1000);
 } else {
     var realTimeInformation = {};
     FengshengWebSocket();
