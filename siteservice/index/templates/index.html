@@ -552,85 +552,89 @@
             </div> -->
             <div class="container results-container">
                 <div class="row">
-                    <div class="price  wow fadeInRight">
-                        <table class="table table-striped table-hover">
-                          <caption class="table-title">实时报价</caption>
-                          <thead>
-                            <tr>
-                              <th>名称&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                              <th>当前价格</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>AUD</td>
-                              <td>100</td>
-                            </tr>
-                            <tr>
-                              <td>EUR</td>
-                              <td>100</td>
-                            </tr>
-                            <tr>
-                              <td>GBP</td>
-                              <td>100</td>
-                            </tr>
-                            <tr>
-                              <td>Gold</td>
-                              <td>100</td>
-                            </tr>
-                            <tr>
-                              <td>LLS</td>
-                              <td>100</td>
-                            </tr>
-                            <tr>
-                              <td>Oil</td>
-                              <td>100</td>
-                            </tr>
-                            <tr>
-                                <td>USD</td>
-                                <td>100</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    <div class="notice wow fadeInRight">
-                        <table class="table table-striped table-hover">
-                            <caption class="table-title">通知</caption>
-                            <thead>
-                            <tr>
-                                <th>标题</th>
-                                <th>日期</th>
-                            </tr>
-                            </thead>
-                            {% for article in articles_notice %}
+                    <div class="col-md-6  col-sm-6">
+                        <div class="price  wow fadeInRight">
+                            <table class="table table-striped table-hover">
+                              <caption class="table-title">实时报价</caption>
+                              <thead>
                                 <tr>
-                                    <td>
-                                        <a href="/article?article_id={{ article.id }}">{{ article.title }}</a>
-                                    </td>
-                                    <td>{{ article.time |date:"Y-m-d"}}</td>
+                                  <th>名称&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                  <th>当前价格</th>
                                 </tr>
-                            {% endfor %}
-                        </table>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>AUD</td>
+                                  <td>100</td>
+                                </tr>
+                                <tr>
+                                  <td>EUR</td>
+                                  <td>100</td>
+                                </tr>
+                                <tr>
+                                  <td>GBP</td>
+                                  <td>100</td>
+                                </tr>
+                                <tr>
+                                  <td>Gold</td>
+                                  <td>100</td>
+                                </tr>
+                                <tr>
+                                  <td>LLS</td>
+                                  <td>100</td>
+                                </tr>
+                                <tr>
+                                  <td>Oil</td>
+                                  <td>100</td>
+                                </tr>
+                                <tr>
+                                    <td>USD</td>
+                                    <td>100</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                        </div>
                     </div>
-                    <div class="news wow fadeInRight">
-                        <table class="table table-striped table-hover">
-                            <caption class="table-title">新闻动态</caption>
-
-                            <thead>
-                            <tr>
-                                <th>标题</th>
-                                <th>日期</th>
-                            </tr>
-                            </thead>
-                            {% for article in articles_new %}
+                    <div class="col-md-6  col-sm-6">
+                        <div class="notice wow fadeInRight">
+                            <table class="table table-striped table-hover">
+                                <caption class="table-title">通知</caption>
+                                <thead>
                                 <tr>
-                                    <td>
-                                        <a href="/article?article_id={{ article.id }}">{{ article.title }}</a>
-                                    </td>
-                                    <td>{{ article.time |date:"Y-m-d"}}</td>
+                                    <th>标题</th>
+                                    <th>日期</th>
                                 </tr>
-                            {% endfor %}
-                        </table>
+                                </thead>
+                                {% for article in articles_notice %}
+                                    <tr>
+                                        <td>
+                                            <a href="/article?article_id={{ article.id }}">{{ article.title }}</a>
+                                        </td>
+                                        <td>{{ article.time |date:"Y-m-d"}}</td>
+                                    </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
+                        <div class="news wow fadeInRight">
+                            <table class="table table-striped table-hover">
+                                <caption class="table-title">新闻动态</caption>
+
+                                <thead>
+                                <tr>
+                                    <th>标题</th>
+                                    <th>日期</th>
+                                </tr>
+                                </thead>
+                                {% for article in articles_new %}
+                                    <tr>
+                                        <td>
+                                            <a href="/article?article_id={{ article.id }}">{{ article.title }}</a>
+                                        </td>
+                                        <td>{{ article.time |date:"Y-m-d"}}</td>
+                                    </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -916,7 +920,7 @@
                                     </ul>
                                 </div>
                                 <div class="item-footer text-center">
-                                    <a href="http://v.858vip.cn/trade/index.aspx?agent=1122" class="btn btn-default">进入网页版</a>
+                                    <a href="http://v.858vip.cn/trade/index.aspx?agent=1122" class="btn btn-primary">进入网页版</a>
                                 </div>
                             </div>
                         </div>
@@ -950,7 +954,7 @@
                                     </ul>
                                 </div>
                                 <div class="item-footer text-center">
-                                    <a href="http://v.858vip.cn/trade/index.aspx?agent=1122" class="btn btn-default">进入网页版</a>
+                                    <a href="http://v.858vip.cn/trade/index.aspx?agent=1122" class="btn btn-primary">进入网页版</a>
                                 </div>
                             </div>
                         </div>
