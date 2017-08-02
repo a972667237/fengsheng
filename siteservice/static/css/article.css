@@ -1,8 +1,13 @@
-.container{
-    width: 80%;
+.contact-form{
     overflow: hidden;
 }
 
-img{
+.form-description img{
     max-width: 100% !important;
+}
+
+@media only screen and (max-width: 600px) {
+    .container{
+        width: 80%;
+    }
 }
