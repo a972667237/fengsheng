@@ -275,7 +275,7 @@ body.fixed-header .scrolling-header .navbar .wrap-inside-nav { /*top: 64px;*/ }
 /******************************/
 /**** ACHIEVEMENTS SECTION ****/
 /******************************/
-.achievements-section { padding: 100px 0 200px; background: url(../img/sections/section-11.jpg) center no-repeat; background-size: cover; }
+.achievements-section { padding: 100px 0 200px; background: url(../img/sections/section-1.jpg) center no-repeat; background-size: cover; }
 
 /******************************/
 /**** LATEST WORKS SECTION ****/
@@ -982,4 +982,8 @@ body.fixed-header .scrolling-header .navbar .wrap-inside-nav { /*top: 64px;*/ }
 
 .visible-xs-block{
   width: 55px;
+}
+
+.dingsheng-section{
+  background: url(../img/sections/section-11.jpg) center no-repeat !important;
 }
