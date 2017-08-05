@@ -5,7 +5,7 @@ from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
 
 def index_render(requests):
     host = requests.get_host()
-    if host == "http://www.dsgjjy.com/":
+    if host == "www.dsgjjy.com":
         return HttpResponseRedirect("/ds")
     articles_notice = Articles.objects.filter(article_type='1', isPublish=True).order_by("-time")[:5]
     articles_new = Articles.objects.filter(article_type='2', isPublish=True).order_by("-time")[:5]
