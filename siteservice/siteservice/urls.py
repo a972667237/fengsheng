@@ -18,6 +18,7 @@ from django.http import HttpResponseRedirect
 from django.contrib import admin
 from index.views import index_render, article_render, list_render
 import api.urls as api_urls
+import dingsheng.urls as dingsheng_urls
 
 
 urlpatterns = [
@@ -27,6 +28,7 @@ urlpatterns = [
     url(r'^ueditor/', include('DjangoUeditor.urls')),
     url(r'^list', list_render),
     url(r'^api/', include(api_urls)),
+    url(r'^ds/', include(dingsheng_urls)),
     url(r'^about', lambda x: HttpResponseRedirect('/article?article_id=1')),
     url(r'^guide', lambda x: HttpResponseRedirect('/article?article_id=2')),
     url(r'^rule', lambda x: HttpResponseRedirect('/article?article_id=3')),
