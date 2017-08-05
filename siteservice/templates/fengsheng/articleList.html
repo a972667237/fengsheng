@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>丰盛投教--文章列表</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <!-- Styles -->
+        <link href='/static/vendor/font-awesome/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,700,300' rel='stylesheet' type='text/css'>
+        <link href="/static/fonts/Stroke-Gap-Icons-Webfont/style.css" rel="stylesheet" type="text/css" />
+
+        <!-- components -->
+        <link href="/static/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="/static/vendor/owl-carousel/owl-carousel/owl.carousel.css" rel="stylesheet" type="text/css" />
+        <link href="/static/vendor/slider-pro/dist/css/slider-pro.min.css" rel="stylesheet" type="text/css" />
+        <link href="/static/vendor/slick-carousel/slick/slick.css" rel="stylesheet" type="text/css" />
+        <link href="/static/vendor/animate.css/animate.min.css" rel="stylesheet" type="text/css" />
+
+        <link href="/static/css/main.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="/static/css/article_list.css">
+
+        <link rel="shortcut icon" href="/static/img/logo-free.png">
+    </head>
+    <body data-scrolling-animations="true">
+
+      <div id="page-preloader"><span class="spinner"></span></div>
+
+      <!-- ========================== -->
+      <!-- Navigation -->
+      <!-- ========================== -->
+      <header class="header scrolling-header">
+            <nav id="nav" class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <div class="container relative-nav-container">
+                    <a class="toggle-button visible-xs-block" data-toggle="collapse" data-target="#navbar-collapse">
+                        <i class="fa fa-navicon"></i>
+                    </a>
+                    <a class="navbar-brand scroll" href="/">
+                        <img class="normal-logo hidden-xs" src="/static/img/logo.png" alt="logo" />
+                        <img class="scroll-logo hidden-xs" src="/static/img/logo-dark.png" alt="logo" />
+                        <img class="scroll-logo visible-xs-block" src="/static/img/logo-small.png" alt="logo" />
+                    </a>
+                    <ul class="nav navbar-nav navbar-right nav-icons wrap-user-control ">
+                      <li><a href="http://v.qo16.cn/Trade/UserRegister.aspx?agent=1122" class="btn nav-btn">开户</a></li>
+                      <li class="open-signup"><a href="http://v.qo16.cn/Trade/UserPwdLogin.aspx" class="btn nav-btn">登陆</a></li>
+                    </ul>
+                    <div class="navbar-collapse collapse floated" id="navbar-collapse">
+                        <ul class="nav navbar-nav navbar-with-inside clearfix navbar-right with-border">
+                          <li><a href="/">主页</a></li>
+                          <li><a href="/about">关于我们</a></li>
+                          <li><a href="/guide">新手指引</a></li>
+                          <li><a href="/rule">交易规则</a></li>
+                          <li><a href="/list">资讯</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header><!--./navigation -->
+        <section class="top-header countact-us-header with-bottom-effect transparent-effect dark dark-strong">
+            <div class="bottom-effect"></div>
+            <div class="header-container">
+                <div class="header-title">
+                    <div class="header-icon"><span class="icon icon-Wheelbarrow"></span></div>
+                    {% if list_type == '1' %}
+                    <div class="title">通知列表</div>
+                    <em>NOTICES</em>
+                    {% else %}
+                    <div class="title">新闻列表</div>
+                    <em>NEWS</em>
+                    {% endif %}
+                </div>
+            </div><!--container-->
+        </section>
+
+        <section class="countact-us-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-16">
+                        <table class="table table-striped table-hover wow fadeInUp">
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>标题</th>
+                                <th>日期</th>
+                            </tr>
+                        </thead>
+                        {% for article in articles %}
+                        <tr>
+                            <td>{{ articles.start_index|add:forloop.counter|add:-1 }}</td>
+                            <td>
+                                <a href="/article?article_id={{ article.id }}">{{ article.title }}</a>
+                            </td>
+                            <td>{{ article.time |date:"Y-m-d"}}</td>
+                        </tr>
+                        {% endfor %}
+                        </table>
+                        <ul class="pagination">
+                            {% if articles.has_previous %}
+                            <li><a href="?list_type={{ list_type }}&page=1">首页</a></li>
+                            <li><a href="?list_type={{ list_type }}&page={{ articles.previous_page_number }}">&laquo;</a></li>
+                            {% endif %}
+                            <li><span class="current">
+                                Page {{ articles.number }}
+                            </span></li>
+                            {% if articles.has_next %}
+                            <li><a href="?list_type={{ list_type }}&page={{ articles.next_page_number }}">&raquo;</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================== -->
+        <!-- FOOTER -->
+        <!-- ========================== -->
+        <footer>
+            <!-- ========================== -->
+            <!-- BUY SECTION -->
+            <!-- ========================== -->
+            <!-- <section class="buy-section with-icon">
+                <div class="section-icon"><span class="icon icon-Umbrella"></span></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-1 col-sm-9 wow fadeInLeft">
+                            <div class="section-text">
+                                <div class=" vcenter like">
+                                    <span class="icon icon-Like"></span>
+                                </div>
+                                <div class="buy-text vcenter">
+                                    <div class="top-text">oscend - a creative & multipurpose template</div>
+                                    <div class="bottom-text">Lorem ipsum dolor sit amet consectetur elit sed</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3  wow fadeInRight">
+                            <a href="#" class="btn btn-info ">Buy it now</a>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+            <!-- ========================== -->
+            <!-- FOOTER - SOCIAL -->
+            <!-- ========================== -->
+            <!-- <section class="social-section dark dark-strong">
+                <div class="container dark-content">
+                    <div class="tt">We are social 24/7 - Get in touch</div>
+                    <ul class="list-socials">
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                        <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                    </ul>
+                </div>
+            </section> -->
+
+            <!-- ========================== -->
+            <!-- FOOTER - FOOTER -->
+            <!-- ========================== -->
+            <section class="footer-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3">
+                            <h5>关于我们</h5>
+                            <p>本金融集团于2009年由数名拥有丰富金融产品投资经验之资深理财精英创办。秉承“追求卓越，开拓创新”的服务理念，为全球投资者提供多元化的金融投资中介及理财服务，理财资产总值超过3亿美元。许多国际知名的金融机构，包括私人银行、投资银行、保险公司等皆为我们的业务伙伴。</p>
+                        </div>
+                        <div class="col-md-3 col-sm-3">
+                            <h5>网站导航</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="footer-nav">
+                                        <li class="active"><a href="/">主页</a></li>
+                                        <li><a href="/about">关于我们</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="footer-nav">
+                                      <li><a href="/guide">新手指引</a></li>
+                                      <li><a href="/rule">交易规则</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3">
+                            <h5>联系信息</h5>
+                            <ul class="contacts-list">
+                                <li>
+                                    <p><i class="icon icon-House"></i>中华人民共和国 广东省</p>
+                                </li>
+                                <li>
+                                    <p><i class="icon icon-Phone2"></i>8888 666 88888</p>
+                                </li>
+                                <li>
+                                    <p><i class="icon icon-Mail"></i><a href="mailto:email@email.com">email@email.com</a> </p>
+
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3 col-sm-3">
+                            <h5>订阅</h5>
+                            <p>
+                                敬请期待。。。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="copyright-section">
+                <p>Copyright &copy; 2017.fengsheng All rights reserved.</p>
+            </section>
+        </footer>
+
+
+
+        <!-- Scripts -->
+
+        <!-- components -->
+        <script src="/static/js/jquery-1.11.3.min.js"></script>
+        <script src="/static/vendor/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+        <script src="/static/vendor/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="/static/vendor/owl-carousel/owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
+        <script src="/static/vendor/waypoints/lib/jquery.waypoints.min.js" type="text/javascript"></script>
+        <script src="/static/vendor/slider-pro/dist/js/jquery.sliderPro.min.js" type="text/javascript"></script>
+        <script src="/static/vendor/slick-carousel/slick/slick.min.js" type="text/javascript"></script>
+        <script src="/static/vendor/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.min.js" type="text/javascript"></script>
+        <script src="/static/vendor/wow/dist/wow.min.js" type="text/javascript"></script>
+        <script src="/static/js/modernizr.js" type="text/javascript"></script>
+
+        <!---<script src="http://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>--->
+        <!-- custom scripts -->
+        <script src="/static/js/contact.js" type="text/javascript"></script>
+        <script src="/static/js/custom.js" type="text/javascript"></script>
+        <script src="/static/js/map.js" type="text/javascript"></script>
+        <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+        </script>
+    </body>
+</html>
