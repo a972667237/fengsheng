@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'api',
     'index',
     'DjangoUeditor',
+    'dingsheng',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -58,7 +59,7 @@ ROOT_URLCONF = 'siteservice.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.abspath(os.path.join(os.path.dirname(os.path.dirname(__file__)), 'templates'))],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
