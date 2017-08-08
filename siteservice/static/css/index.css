@@ -81,10 +81,3 @@
 .price table tr:nth-child(even) td:nth-child(2){
   color: green;
 }
-
-.slide-content .title{
-  font-size: 33px !important;
-}
-.slide-content .under-title{
-  font-size: 44px !important;
-}
