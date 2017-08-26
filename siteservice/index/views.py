@@ -30,3 +30,6 @@ def list_render(requests):
     except EmptyPage:
         articles = paginator.page(paginator.num_pages)
     return render(requests, 'fengsheng/articleList.html', locals())
+
+def inland_render(requests):
+    return render(requests, "inLand/index.html")

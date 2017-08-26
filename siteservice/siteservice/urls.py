@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.http import HttpResponseRedirect
 from django.contrib import admin
-from index.views import index_render, article_render, list_render
+from index.views import index_render, article_render, list_render, inland_render
 import api.urls as api_urls
 import dingsheng.urls as dingsheng_urls
 
@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index_render),
     url(r'^article', article_render),
+    url(r'^inland', inland_render),
     url(r'^ueditor/', include('DjangoUeditor.urls')),
     url(r'^list', list_render),
     url(r'^api/', include(api_urls)),
