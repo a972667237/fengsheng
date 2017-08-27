@@ -7,6 +7,8 @@ def index_render(requests):
     host = requests.get_host()
     if host == "www.dsgjjy.com" or host == "dsgjjy.com":
         return HttpResponseRedirect("/ds")
+    if host == 'www.bashaman.cn' or host == 'bashaman.cn':
+        return render(requests, "inLand/index.html")
     articles_notice = Articles.objects.filter(article_type='1', isPublish=True).order_by("-time")[:5]
     articles_new = Articles.objects.filter(article_type='2', isPublish=True).order_by("-time")[:5]
     return render(requests, 'fengsheng/index.html', locals())
