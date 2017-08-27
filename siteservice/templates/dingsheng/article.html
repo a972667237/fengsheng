@@ -189,10 +189,15 @@
                     </div>
                 </div>
             </section>
-
+            {% if isInland %}
             <section class="copyright-section">
-                <p>Copyright &copy; 2017.fengsheng All rights reserved.</p>
+                <p>版权所有 &copy; 2017.华飞同发（北京）网络科技有限公司</p>
             </section>
+            {% else %}
+            <section class="copyright-section">
+                <p>Copyright &copy; 2017.dingsheng All rights reserved.</p>
+            </section>
+            {% endif %}
         </footer>
 
 
