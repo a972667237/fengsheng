@@ -339,6 +339,14 @@ td{
   margin-top: 0;
 }
 
+.open_center{
+  width: 60%;
+  margin: 10px auto;
+  text-align: center;
+}
+.open_center a{
+  display: inline-block;
+}
 /*@media screen and (min-width: 951px ){
   .clients-section, .section-cover, .section-content, .section-advantage{
     width: 650px;
