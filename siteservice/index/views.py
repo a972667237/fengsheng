@@ -1,15 +1,12 @@
 from django.shortcuts import render, get_object_or_404, HttpResponse, Http404, HttpResponseRedirect
 from .models import Articles
 from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
-from dingsheng.models import Articles as dingsheng_article
 # Create your views here.
 
 def index_render(requests):
     host = requests.get_host()
     if host == "www.dsgjjy.com" or host == "dsgjjy.com":
-        articles_notice = dingsheng_article.objects.filter(article_type='1', isPublish=True).order_by("-time")[:5]
-        articles_new = dingsheng_article.objects.filter(article_type='2', isPublish=True).order_by("-time")[:5]
-        return render(requests, 'dingsheng/index.html', locals())
+        return render(requests, "inLand/index.html")
     if host == 'www.bashaman.cn' or host == 'bashaman.cn':
         return render(requests, "inLand/index.html")
     articles_notice = Articles.objects.filter(article_type='1', isPublish=True).order_by("-time")[:5]
