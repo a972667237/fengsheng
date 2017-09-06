@@ -362,3 +362,24 @@ td{
     width: 100%;
   }
 }*/
+
+.qqFix{
+  position: fixed ;
+  bottom: 0;
+  right: 30px;
+  z-index: 10000;
+}
+
+.qqFix a{
+  color: #fff;
+  text-decoration: none;
+}
+
+.qqFix a .qqFix_content{
+  background-color: #ff6400;
+  padding: 3px 15px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  opacity: 0.8;
+  font-family: "Microsoft YaHei UI";
+}

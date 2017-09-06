@@ -10,7 +10,7 @@ def index_render(requests):
     host = requests.get_host()
     if host == 'www.bashaman.cn' or host == 'bashaman.cn':
         isInland = True
-    return render(requests, 'dingsheng/index.html', locals())
+    return render(requests, 'inLand/index.html', locals())
 
 def article_render(requests):
     a_id = requests.GET.get('article_id')
